@@ -31,13 +31,14 @@
       <q-layout view="lHh Lpr fff">
         <q-layout-header>
           <q-toolbar
+            :glossy="$q.theme === 'mat'"
             :inverted="$q.theme === 'ios'"
           >
             <q-btn flat round dense @click="drawerState = !drawerState" icon="fas fa-bars"></q-btn>
 
             <q-toolbar-title>
-              URL - Scraper
-              <div slot="subtitle">Scrape a webpage url</div>
+              Quasar App - scraper
+              <div slot="subtitle">Running on Quasar v{{ version }}</div>
             </q-toolbar-title>
           </q-toolbar>
         </q-layout-header>
@@ -48,17 +49,21 @@
         >
           <q-list no-border link inset-delimiter>
             <q-list-header>Essential Links</q-list-header>
-            <q-item @click.native="launch('http://127.0.0.1:5000/api/v1/resources/scrape/all')">
+            <q-item @click.native="launch('http://quasar-framework.org')">
               <q-item-side icon="fas fa-graduation-cap"></q-item-side>
-              <q-item-main label="API" sublabel="Last uploaded scrape"></q-item-main>
+              <q-item-main label="Docs" sublabel="quasar-framework.org"></q-item-main>
             </q-item>
-            <q-item @click.native="launch('http://127.0.0.1:5000/newscrape')">
+            <q-item @click.native="launch('https://discord.gg/5TDhbDg')">
               <q-item-side icon="fas fa-comments"></q-item-side>
-              <q-item-main label="New Scrape" sublabel="Performs a new Scrape"></q-item-main>
+              <q-item-main label="Discord Chat Channel" sublabel="https://discord.gg/5TDhbDg"></q-item-main>
             </q-item>
-            <q-item @click.native="launch('http://127.0.0.1:5000/history')">
+            <q-item @click.native="launch('http://forum.quasar-framework.org')">
               <q-item-side icon="far fa-clipboard"></q-item-side>
-              <q-item-main label="History" sublabel="Show previous scrape times"></q-item-main>
+              <q-item-main label="Forum" sublabel="forum.quasar-framework.org"></q-item-main>
+            </q-item>
+            <q-item @click.native="launch('https://twitter.com/quasarframework')">
+              <q-item-side icon="fab fa-twitter"></q-item-side>
+              <q-item-main label="Twitter" sublabel="@quasarframework"></q-item-main>
             </q-item>
           </q-list>
         </q-layout-drawer>
@@ -74,7 +79,8 @@
 
         <!-- page content; replace this entirely -->
         <div class="row flex-center absolute-full">
-          <img src="https://cc-client-cdn.clearcompany.com/77d2abb4-86ec-f60c-8591-bcd93d5f4ac8/Logo/9d5cded2-6590-d856-4bec-39f67d224c5e">
+          <img src="quasar-logo-full.svg">
+        </div>
 
       </q-page>
     </script>
