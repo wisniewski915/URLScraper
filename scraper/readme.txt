@@ -58,7 +58,7 @@ We will be greeted with the home screen and a nav drawer on the left.
 	scrape.csv: will be created here during a new scrape
 
 ##scraper folder
-	Contains Quasar framework import
+	Contains Quasar framework import, Quasar was embeded into layout.html
 
 
 ## API folder
