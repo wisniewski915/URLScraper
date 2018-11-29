@@ -1,3 +1,4 @@
+#Sets up db instance
 from datetime import datetime
 from api import db
 

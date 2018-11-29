@@ -1,3 +1,4 @@
+#Call init inside of api package
 from api import app
 
 if __name__ == '__main__':

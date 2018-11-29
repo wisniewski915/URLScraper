@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import csv
 
 #TODO: un-hardcode, make different functions for different parameters
+#Sets latest run
 url = 'https://terrasect.com/'
 r = requests.get(url)
 html_content = r.text
@@ -20,7 +21,6 @@ def RunScraper():
 
 	links = soup.find_all('a')
 	links = [a.get('href') for a in soup.find_all('a', href=True)]
-	#print(links)
 	
 
 	

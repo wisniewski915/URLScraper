@@ -1,3 +1,4 @@
+#run.py will run in init inside api package
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
