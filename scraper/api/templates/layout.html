@@ -25,6 +25,11 @@
         position: absolute;
       }
     </style>
+    {% if title %}
+        <title>URLScraper - {{ title }}</title>
+    {% else %}
+        <title>URLScraper</title>
+    {% endif %}
   </head>
   <body>
     <div id="q-app">
@@ -40,6 +45,7 @@
               <div slot="subtitle">Scrape a webpage url</div>
             </q-toolbar-title>
           </q-toolbar>
+          </q-layout-header>
         </q-layout-header>
 
         <q-layout-drawer
@@ -47,10 +53,10 @@
           :content-class="$q.theme === 'mat' ? 'bg-grey-3' : null"
         >
           <q-list no-border link inset-delimiter>
-            <q-list-header>Essential Links</q-list-header>
+            <q-list-header>Scraper Links</q-list-header>
             <q-item @click.native="launch('http://127.0.0.1:5000/api/v1/resources/scrape/all')">
-              <q-item-side icon="fas fa-graduation-cap"></q-item-side>
-              <q-item-main label="API" sublabel="Last uploaded scrape"></q-item-main>
+              <q-item-side icon="fas fa-comments"></q-item-side>
+              <q-item-main label="Show Scrape" sublabel="Last uploaded scrape"></q-item-main>
             </q-item>
             <q-item @click.native="launch('http://127.0.0.1:5000/newscrape')">
               <q-item-side icon="fas fa-comments"></q-item-side>
@@ -61,6 +67,8 @@
               <q-item-main label="History" sublabel="Show previous scrape times"></q-item-main>
             </q-item>
           </q-list>
+          <q-tabs slot="navigation">
+   
         </q-layout-drawer>
 
         <q-page-container>
@@ -71,15 +79,12 @@
 
     <script type="text/x-template" id="my-page">
       <q-page padding>
-
-        <!-- page content; replace this entirely -->
-        <div class="row flex-center absolute-full">
-          <img src="https://cc-client-cdn.clearcompany.com/77d2abb4-86ec-f60c-8591-bcd93d5f4ac8/Logo/9d5cded2-6590-d856-4bec-39f67d224c5e">
-
+        {% block content %}
+        <!-- For Templates-->
+        {% endblock %}        
       </q-page>
-    </script>
-
     
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar-framework@^0.17.0/dist/umd/quasar.mat.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar-framework@^0.17.0/dist/umd/icons.fontawesome.umd.min.js"></script>
