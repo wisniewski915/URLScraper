@@ -54,6 +54,10 @@
         >
           <q-list no-border link inset-delimiter>
             <q-list-header>Scraper Links</q-list-header>
+            <q-item @click.native="launch('http://127.0.0.1:5000/')">
+              <q-item-side icon="far fa-clipboard"></q-item-side>
+              <q-item-main label="Home" sublabel="New Home Tab"></q-item-main>
+            </q-item>
             <q-item @click.native="launch('http://127.0.0.1:5000/api/v1/resources/scrape/all')">
               <q-item-side icon="fas fa-comments"></q-item-side>
               <q-item-main label="Show Scrape" sublabel="Last uploaded scrape"></q-item-main>
